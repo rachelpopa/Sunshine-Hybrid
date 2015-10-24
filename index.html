@@ -4,13 +4,18 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta http-equiv='Content-Type' content='text/html;charset=UTF-8'/>
 		
-		<title>Mobile App with data-bound List</title>
+		<title>Sunshine</title>
 		
-		<script src="https://sapui5.hana.ondemand.com/resources/sap-ui-core.js" 
+		<script src="resources/sap-ui-core.js" 
 				id="sap-ui-bootstrap"
 				data-sap-ui-libs="sap.m,sap.ui.layout" 
 				data-sap-ui-xx-bindingSyntax="complex"
-				data-sap-ui-theme="sap_bluecrystal"></script>
+				data-sap-ui-theme="sap_bluecrystal"
+                data-sap-ui-compatVersion='edge'
+                data-sap-ui-resourceroots='{
+                    "sap.ui.sunshine.wt": "./"
+                    }'>
+        </script>
 		<!-- load the mobile lib "sap.m", the layout lib and the "sap_bluecrystal" theme -->
 		
 		
@@ -386,12 +391,12 @@
 			// create the UI
 			
 			// create a List control
-			var list = new sap.m.List({
+			var list1 = new sap.m.List({
 				headerText:"Sunshine"
 			});
 			
 			// bind the List items to the data collection
-			list.bindItems({
+			list1.bindItems({
 				path : "/list", 
 				sorter : new sap.ui.model.Sorter("dt"),
 				template : new sap.m.StandardListItem({
@@ -406,11 +411,16 @@
 					}
 				})
 			});
+            
+            var list2 = new sap.ui.xmlview({
+               viewName : "sap.ui.sunshine.wt.List"
+            });
+            
+            //ar list2 = "";
 			
-			// create the page holding the List
+			//create the page holding the List
 			var page1 = new sap.m.Page({
-				title: "Sunshine",
-				content : list
+				content : list2
 			});
 			
 			// create the detail page

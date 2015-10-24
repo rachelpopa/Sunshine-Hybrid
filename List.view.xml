@@ -1,0 +1,46 @@
+<mvc:View
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m">
+	<List>
+        <headerToolbar>
+			<Toolbar>
+                <Image src="images/ic_logo.png" />
+			</Toolbar>
+		</headerToolbar>
+		<CustomListItem
+            id="forecastToday">
+            <HBox>
+                <VBox>
+                    <Text text="Today"/>
+                    <Text text="26"/>
+                    <Text text="9"/>
+                    <Text text="Clear"/>
+                </VBox>
+                <VBox>
+                    <Image 
+                        src="images/art_clear.png"
+                    />
+                    <Text text="Clear"/>
+                </VBox>
+			</HBox>
+        </CustomListItem>
+        <items>
+            <CustomListItem>
+                <HBox>
+                    <Image 
+                        src="images/ic_launcher.png"
+                    />
+                    <VBox>
+                        <Text text="Monday"/>
+                        <Text text="Clear"/>
+                    </VBox>
+                    <VBox>
+                        <Text text="26"/>
+                        <Text text="9"/>
+                    </VBox>
+                </HBox>
+            </CustomListItem>
+        </items>
+	</List>
+</mvc:View>
+
