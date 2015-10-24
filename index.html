@@ -1,0 +1,457 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta http-equiv='Content-Type' content='text/html;charset=UTF-8'/>
+		
+		<title>Mobile App with data-bound List</title>
+		
+		<script src="https://sapui5.hana.ondemand.com/resources/sap-ui-core.js" 
+				id="sap-ui-bootstrap"
+				data-sap-ui-libs="sap.m,sap.ui.layout" 
+				data-sap-ui-xx-bindingSyntax="complex"
+				data-sap-ui-theme="sap_bluecrystal"></script>
+		<!-- load the mobile lib "sap.m", the layout lib and the "sap_bluecrystal" theme -->
+		
+		
+		<script type="text/javascript">
+			
+			// create the data
+			
+			// create some dummy JSON data
+			
+			var data = {  
+				  "city":{  
+					"id":6119109,
+					"name":"Regina",
+					"coord":{  
+					  "lon":-104.617798,
+					  "lat":50.450081
+					},
+					"country":"CA",
+					"population":0
+				  },
+				  "cod":"200",
+				  "message":0.0246,
+				  "cnt":14,
+				  "list":[  
+					{  
+					  "dt":1445536800,
+					  "temp":{  
+						"day":7.17,
+						"min":1.76,
+						"max":7.17,
+						"night":1.76,
+						"eve":7.17,
+						"morn":7.17
+					  },
+					  "pressure":957.37,
+					  "humidity":53,
+					  "weather":[  
+						{  
+						  "id":800,
+						  "main":"Clear",
+						  "description":"sky is clear",
+						  "icon":"01n"
+						}
+					  ],
+					  "speed":1.57,
+					  "deg":246,
+					  "clouds":0
+					},
+					{  
+					  "dt":1445623200,
+					  "temp":{  
+						"day":6.48,
+						"min":-2.71,
+						"max":8.49,
+						"night":-2.71,
+						"eve":6.5,
+						"morn":1.72
+					  },
+					  "pressure":962.66,
+					  "humidity":55,
+					  "weather":[  
+						{  
+						  "id":800,
+						  "main":"Clear",
+						  "description":"sky is clear",
+						  "icon":"01d"
+						}
+					  ],
+					  "speed":5.57,
+					  "deg":327,
+					  "clouds":0
+					},
+					{  
+					  "dt":1445709600,
+					  "temp":{  
+						"day":9.68,
+						"min":-2.06,
+						"max":11.45,
+						"night":3.82,
+						"eve":7.77,
+						"morn":-2.06
+					  },
+					  "pressure":962.74,
+					  "humidity":51,
+					  "weather":[  
+						{  
+						  "id":802,
+						  "main":"Clouds",
+						  "description":"scattered clouds",
+						  "icon":"03d"
+						}
+					  ],
+					  "speed":3.26,
+					  "deg":241,
+					  "clouds":48
+					},
+					{  
+					  "dt":1445796000,
+					  "temp":{  
+						"day":7.04,
+						"min":-3.61,
+						"max":8.06,
+						"night":-3.61,
+						"eve":5.95,
+						"morn":3.11
+					  },
+					  "pressure":969.16,
+					  "humidity":78,
+					  "weather":[  
+						{  
+						  "id":500,
+						  "main":"Rain",
+						  "description":"light rain",
+						  "icon":"10d"
+						}
+					  ],
+					  "speed":3.96,
+					  "deg":326,
+					  "clouds":56,
+					  "rain":2.12
+					},
+					{  
+					  "dt":1445882400,
+					  "temp":{  
+						"day":5.44,
+						"min":-2.98,
+						"max":6.05,
+						"night":2.55,
+						"eve":6.05,
+						"morn":-2.98
+					  },
+					  "pressure":960.22,
+					  "humidity":0,
+					  "weather":[  
+						{  
+						  "id":500,
+						  "main":"Rain",
+						  "description":"light rain",
+						  "icon":"10d"
+						}
+					  ],
+					  "speed":2.23,
+					  "deg":118,
+					  "clouds":31,
+					  "rain":0.24
+					},
+					{  
+					  "dt":1445968800,
+					  "temp":{  
+						"day":3.65,
+						"min":1.19,
+						"max":3.69,
+						"night":1.19,
+						"eve":3.69,
+						"morn":2.79
+					  },
+					  "pressure":963.78,
+					  "humidity":0,
+					  "weather":[  
+						{  
+						  "id":500,
+						  "main":"Rain",
+						  "description":"light rain",
+						  "icon":"10d"
+						}
+					  ],
+					  "speed":5.75,
+					  "deg":113,
+					  "clouds":98,
+					  "rain":2.63
+					},
+					{  
+					  "dt":1446055200,
+					  "temp":{  
+						"day":7.08,
+						"min":1.37,
+						"max":8.9,
+						"night":4.84,
+						"eve":8.9,
+						"morn":1.37
+					  },
+					  "pressure":960.04,
+					  "humidity":0,
+					  "weather":[  
+						{  
+						  "id":800,
+						  "main":"Clear",
+						  "description":"sky is clear",
+						  "icon":"01d"
+						}
+					  ],
+					  "speed":5.56,
+					  "deg":178,
+					  "clouds":27
+					},
+					{  
+					  "dt":1446141600,
+					  "temp":{  
+						"day":7.45,
+						"min":2.44,
+						"max":7.85,
+						"night":2.44,
+						"eve":7.85,
+						"morn":2.69
+					  },
+					  "pressure":951.33,
+					  "humidity":0,
+					  "weather":[  
+						{  
+						  "id":800,
+						  "main":"Clear",
+						  "description":"sky is clear",
+						  "icon":"01d"
+						}
+					  ],
+					  "speed":5.02,
+					  "deg":276,
+					  "clouds":12
+					},
+					{  
+					  "dt":1446228000,
+					  "temp":{  
+						"day":10.52,
+						"min":3.05,
+						"max":11.73,
+						"night":8.21,
+						"eve":11.73,
+						"morn":3.05
+					  },
+					  "pressure":944,
+					  "humidity":0,
+					  "weather":[  
+						{  
+						  "id":800,
+						  "main":"Clear",
+						  "description":"sky is clear",
+						  "icon":"01d"
+						}
+					  ],
+					  "speed":4.09,
+					  "deg":259,
+					  "clouds":0
+					},
+					{  
+					  "dt":1446314400,
+					  "temp":{  
+						"day":9.22,
+						"min":1.11,
+						"max":9.22,
+						"night":1.11,
+						"eve":8.34,
+						"morn":3.91
+					  },
+					  "pressure":951.88,
+					  "humidity":0,
+					  "weather":[  
+						{  
+						  "id":800,
+						  "main":"Clear",
+						  "description":"sky is clear",
+						  "icon":"01d"
+						}
+					  ],
+					  "speed":5.75,
+					  "deg":292,
+					  "clouds":0
+					},
+					{  
+					  "dt":1446400800,
+					  "temp":{  
+						"day":9.66,
+						"min":-2.31,
+						"max":11.19,
+						"night":9.7,
+						"eve":11.19,
+						"morn":-2.31
+					  },
+					  "pressure":952.14,
+					  "humidity":0,
+					  "weather":[  
+						{  
+						  "id":800,
+						  "main":"Clear",
+						  "description":"sky is clear",
+						  "icon":"01d"
+						}
+					  ],
+					  "speed":5.56,
+					  "deg":161,
+					  "clouds":46
+					},
+					{  
+					  "dt":1446487200,
+					  "temp":{  
+						"day":14.18,
+						"min":9.38,
+						"max":14.18,
+						"night":10.7,
+						"eve":11.81,
+						"morn":9.38
+					  },
+					  "pressure":944.33,
+					  "humidity":0,
+					  "weather":[  
+						{  
+						  "id":500,
+						  "main":"Rain",
+						  "description":"light rain",
+						  "icon":"10d"
+						}
+					  ],
+					  "speed":4.36,
+					  "deg":263,
+					  "clouds":18
+					},
+					{  
+					  "dt":1446573600,
+					  "temp":{  
+						"day":17.99,
+						"min":12.85,
+						"max":17.99,
+						"night":12.85,
+						"eve":15.97,
+						"morn":13.58
+					  },
+					  "pressure":942.78,
+					  "humidity":0,
+					  "weather":[  
+						{  
+						  "id":800,
+						  "main":"Clear",
+						  "description":"sky is clear",
+						  "icon":"01d"
+						}
+					  ],
+					  "speed":7.26,
+					  "deg":277,
+					  "clouds":0
+					},
+					{  
+					  "dt":1446660000,
+					  "temp":{  
+						"day":14.21,
+						"min":7.7,
+						"max":14.21,
+						"night":7.7,
+						"eve":12.21,
+						"morn":11.83
+					  },
+					  "pressure":946.9,
+					  "humidity":0,
+					  "weather":[  
+						{  
+						  "id":500,
+						  "main":"Rain",
+						  "description":"light rain",
+						  "icon":"10d"
+						}
+					  ],
+					  "speed":6.36,
+					  "deg":282,
+					  "clouds":3,
+					  "rain":0.53
+					}
+				  ]
+				};
+			
+			// create a Model with this data
+			var model = new sap.ui.model.json.JSONModel();
+			model.setData(data);
+			
+			
+			// create the UI
+			
+			// create a List control
+			var list = new sap.m.List({
+				headerText:"Sunshine"
+			});
+			
+			// bind the List items to the data collection
+			list.bindItems({
+				path : "/list", 
+				sorter : new sap.ui.model.Sorter("dt"),
+				template : new sap.m.StandardListItem({
+					title: "{dt}",
+					description: "{weather/0/description}",
+                    info: "{temp/max}", 
+					type: sap.m.ListType.Navigation,
+					press:function(evt){
+						var oBindingContext = evt.getSource().getBindingContext(); // evt.getSource() is the ListItem
+						page2.setBindingContext(oBindingContext); // make sure the detail page has the correct data context
+						app.to("page2");
+					}
+				})
+			});
+			
+			// create the page holding the List
+			var page1 = new sap.m.Page({
+				title: "Sunshine",
+				content : list
+			});
+			
+			// create the detail page
+			var page2 = new sap.m.Page("page2", {
+				title: "Details",
+				showNavButton: true,
+				navButtonPress: function(){
+					app.back();
+				},
+				content : [
+                    new sap.ui.layout.HorizontalLayout({
+                        content: [
+                            new sap.ui.layout.VerticalLayout({
+                                content: [
+                                    new sap.m.Text({text: "{dt}"}),
+                                    new sap.m.Text({text: "{temp/max}"}),
+                                    new sap.m.Text({text: "{temp/min}"}),
+                                    new sap.m.Text({text: "{humidity}"}),
+                                    new sap.m.Text({text: "{speed}"}),
+                                    new sap.m.Text({text: "{pressure}"})
+                            ]}),
+                            new sap.ui.layout.VerticalLayout({
+                                content: [
+                                    new sap.m.Text({text: "{weather/0/description}"})
+                            ]})
+						]
+                    })
+				]
+			});
+			
+			// create a mobile App holding the pages and place the App into the HTML document
+			var app = new sap.m.App({
+				pages: [page1, page2]
+			}).placeAt("content");
+			
+			// set the model to the App; it will be propagated to the children
+			app.setModel(model);
+			
+		</script>
+		
+	</head>
+	<body id="content" class="sapUiBody">
+	</body>
+</html> 
