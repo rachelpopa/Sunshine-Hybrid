@@ -1,7 +1,16 @@
 <mvc:View
+    controllerName="sap.ui.sunshine.wt.List"
 	xmlns:mvc="sap.ui.core.mvc"
 	xmlns="sap.m">
-	<List>
+	<List
+        items="{
+                path : '/list', 
+                sorter : [{
+                    path : 'dt'
+                }],
+                group : true
+            }">
+            
         <headerToolbar>
 			<Toolbar>
                 <Image src="images/ic_logo.png" />
@@ -12,33 +21,33 @@
             type="Navigation">
             <HBox>
                 <VBox>
-                    <Text text="Today"/>
-                    <Text text="26"/>
-                    <Text text="9"/>
-                    <Text text="Clear"/>
+                    <Text text="{dt}"/>
+                    <Text text="{temp/max}"/>
+                    <Text text="{temp/min}"/>
                 </VBox>
                 <VBox>
                     <Image 
                         src="images/art_clear.png"
                     />
-                    <Text text="Clear"/>
+                    <Text text="{weather/0/main}"/>
                 </VBox>
 			</HBox>
         </CustomListItem>
         <items>
             <CustomListItem
-                type="Navigation">
+                type="Navigation"
+                press="onPress">
                 <HBox>
                     <Image 
                         src="images/ic_launcher.png"
                     />
                     <VBox>
-                        <Text text="Monday"/>
-                        <Text text="Clear"/>
+                        <Text text="{dt}"/>
+                        <Text text="{weather/0/main}"/>
                     </VBox>
                     <VBox>
-                        <Text text="26"/>
-                        <Text text="9"/>
+                        <Text text="{temp/max}"/>
+                        <Text text="{temp/min}"/>
                     </VBox>
                 </HBox>
             </CustomListItem>
