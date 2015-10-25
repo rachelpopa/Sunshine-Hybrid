@@ -7,21 +7,20 @@
 		<title>Sunshine</title>
 		
 		<script src="resources/sap-ui-core.js" 
-				id="sap-ui-bootstrap"
-				data-sap-ui-libs="sap.m,sap.ui.layout" 
-				data-sap-ui-xx-bindingSyntax="complex"
-				data-sap-ui-theme="sap_bluecrystal"
-                data-sap-ui-compatVersion='edge'
-                data-sap-ui-resourceroots='{
-                    "sap.ui.sunshine.wt": "./"
-                    }'>
+            id="sap-ui-bootstrap"
+            data-sap-ui-libs="sap.m,sap.ui.layout" 
+            data-sap-ui-xx-bindingSyntax="complex"
+            data-sap-ui-theme="sap_bluecrystal"
+            data-sap-ui-compatVersion='edge'
+            data-sap-ui-preload="sync"
+            data-sap-ui-resourceroots='{
+                "sap.ui.sunshine.wt": "./"
+                }'>
         </script>
 		<!-- load the mobile lib "sap.m", the layout lib and the "sap_bluecrystal" theme -->
 		
 		
 		<script type="text/javascript">
-			
-			// create the data
 			
 			// create some dummy JSON data
 			
@@ -383,11 +382,215 @@
 				  ]
 				};
 			
+            Date.prototype.getJulian = function() {
+                return Math.floor((this / 86400000) -
+                (this.getTimezoneOffset()/1440) + 2440587.5);
+                }
+            
+            function getDay(time) {
+                // The day string for forecast uses the following logic:
+                // For today: "Today, June 8"
+                // For tomorrow:  "Tomorrow"
+                // For the next 5 days: "Wednesday" (just the day name)
+                // For all days after that: "Mon Jun 8"
+                
+                var currentDate = new Date();
+                var currentJulianDay = currentDate.getJulian(); 
+                
+                var forecastDate = new Date(time);
+                var forecastJulianDay = forecastDate.getJulian();
+                
+                // If the date we're building the String for is today's date, the format
+                // is "Today, June 24"
+                if (forecastJulianDay == currentJulianDay) {
+                    return "Today, " + getFullMonth(forecastDate.getMonth()) + " " + forecastDate.getDate();
+
+                } else if ( forecastJulianDay < currentJulianDay + 7 ) {
+                    // If the input date is less than a week in the future, just return the day name.
+                    return getFullWeekDay(forecastDate.getDay());
+                } else {
+                    // Otherwise, use the form "Mon Jun 3"
+                   return getShortWeekDay(forecastDate.getDay()) + " " + getShortMonth(forecastDate.getMonth()) + " " + forecastDate.getDate();
+                }
+            }
+            
+            function getFullDate(time) {
+                var forecastDate = new Date(time);
+                return getShortMonth(forecastDate.getMonth()) + " " + forecastDate.getDate() + ", " + forecastDate.getFullYear();
+            }
+            
+            function getFullWeekDay(code) {
+                var day = "";
+                switch(code) {
+                            case 0:
+                                day = "Sunday";
+                                break;
+                            case 1:
+                                day = "Monday";
+                                break;
+                            case 2:
+                                day = "Tuesday";
+                                break;
+                            case 3:
+                                day = "Wednesday";
+                                break;
+                            case 4:
+                                day = "Thursday";
+                                break;
+                            case 5:
+                                day = "Friday";
+                                break;
+                            case 6:
+                                day = "Saturday";
+                                break;
+                        }
+                return day;
+            }
+            
+            function getShortWeekDay(code) {
+            var day = "";
+                switch(code) {
+                            case 0:
+                                day = "Sun";
+                                break;
+                            case 1:
+                                day = "Mon";
+                                break;
+                            case 2:
+                                day = "Tue";
+                                break;
+                            case 3:
+                                day = "Wed";
+                                break;
+                            case 4:
+                                day = "Thu";
+                                break;
+                            case 5:
+                                day = "Fri";
+                                break;
+                            case 6:
+                                day = "Sat";
+                                break;
+                        }
+                return day;
+            }
+            
+            function getFullMonth(code) {
+                var month = "";
+                switch (code){
+                    case 0:
+                        month = "January";
+                        break;
+                    case 1:
+                        month = "February";
+                        break;
+                    case 2:
+                        month = "March";
+                        break;
+                    case 3:
+                        month = "April";
+                        break;
+                    case 4:
+                        month = "May";
+                        break;
+                    case 5:
+                        month = "June";
+                        break;
+                    case 6:
+                        month = "July";
+                        break;
+                    case 7:
+                        month = "August";
+                        break;
+                    case 8:
+                        month = "September";
+                        break;
+                    case 9:
+                        month = "October";
+                        break;
+                    case 10:
+                        month = "November";
+                        break;
+                    case 11:
+                        month = "December";
+                        break;
+                }
+                return month;
+            }
+            
+            function getShortMonth(code) {
+                var month = "";
+                switch (code){
+                    case 0:
+                        month = "Jan";
+                        break;
+                    case 1:
+                        month = "Feb";
+                        break;
+                    case 2:
+                        month = "Mar";
+                        break;
+                    case 3:
+                        month = "Apr";
+                        break;
+                    case 4:
+                        month = "May";
+                        break;
+                    case 5:
+                        month = "Jun";
+                        break;
+                    case 6:
+                        month = "Jul";
+                        break;
+                    case 7:
+                        month = "Aug";
+                        break;
+                    case 8:
+                        month = "Sep";
+                        break;
+                    case 9:
+                        month = "Oct";
+                        break;
+                    case 10:
+                        month = "Nov";
+                        break;
+                    case 11:
+                        month = "Dec";
+                        break;
+                }
+                return month;
+            }
+            
+            function getDate(time) {
+                return "Wednesday";
+            }
+            
+            function getIcon(weatherId) {
+                return "ic_clear.png";
+            }
+            
+            function getImage(weatherId) {
+                return "art_clear";
+            }
+            
 			// create a Model with this data
 			var model = new sap.ui.model.json.JSONModel();
-			model.setData(data);
-			
-			
+			//model.setData(data);
+            model.loadData("http://api.openweathermap.org/data/2.5/forecast/daily?id=524901&APPID=KEY-REMOVED&q=Regina&mode=json&units=metric&cnt=14", "", false);
+
+            var listData = model.getProperty("/list"); 
+
+            var updatedList = [];
+            
+            for(var i = 0; i < listData.length; i++) {
+               // alert(listData[i].dt);
+               var listItem = listData[i];
+               //dt is in seconds so it is converted into milliseconds for the date conversion
+                listItem.day = getDay(listItem.dt*1000);
+                listItem.date = getFullDate(listItem.dt*1000);
+                updatedList.push(listItem);
+            }
+            
 			// create the UI
             
             var list = new sap.ui.xmlview({

@@ -1,9 +1,10 @@
 <mvc:View
+	height="100%"
 	xmlns:mvc="sap.ui.core.mvc"
 	xmlns="sap.m">
     <VBox>
-        <Text text="{dt}"/>
-        <Text text="{dt}"/>
+        <Text text="{day}"/>
+        <Text text="{date}"/>
         <HBox>
             <VBox>
                 <Text text="{temp/max}"/>

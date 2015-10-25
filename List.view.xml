@@ -21,7 +21,7 @@
             type="Navigation">
             <HBox>
                 <VBox>
-                    <Text text="{dt}"/>
+                    <Text text="{day}"/>
                     <Text text="{temp/max}"/>
                     <Text text="{temp/min}"/>
                 </VBox>
@@ -42,7 +42,7 @@
                         src="images/ic_launcher.png"
                     />
                     <VBox>
-                        <Text text="{dt}"/>
+                        <Text text="{day}"/>
                         <Text text="{weather/0/main}"/>
                     </VBox>
                     <VBox>

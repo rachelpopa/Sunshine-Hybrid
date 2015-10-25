@@ -1,4 +1,4 @@
- sap.ui.define([
+sap.ui.define([
 		'sap/ui/core/mvc/Controller'
 	], function(Controller) {
 	"use strict";
@@ -6,7 +6,6 @@
 	var ListController = Controller.extend("sap.ui.sunshine.wt.List", {
 
 		onInit : function (evt) {
-            //alert("Blah");
 		},
         
         onPress : function (evt) {
