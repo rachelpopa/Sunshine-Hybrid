@@ -1,0 +1,23 @@
+<mvc:View
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m">
+    <VBox>
+        <Text text="{dt}"/>
+        <Text text="{dt}"/>
+        <HBox>
+            <VBox>
+                <Text text="{temp/max}"/>
+                <Text text="{temp/min}"/>
+            </VBox>
+            <VBox>
+                <Image 
+                        src="images/art_clear.png"
+                    />
+                <Text text="{weather/0/main}"/>
+            </VBox>
+        </HBox>
+        <Text text="{humidity}"/>
+        <Text text="{speed}"/>
+        <Text text="{pressure}"/>
+    </VBox>
+</mvc:View>
