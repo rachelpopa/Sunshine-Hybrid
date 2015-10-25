@@ -8,7 +8,8 @@
 			</Toolbar>
 		</headerToolbar>
 		<CustomListItem
-            id="forecastToday">
+            id="forecastToday"
+            type="Navigation">
             <HBox>
                 <VBox>
                     <Text text="Today"/>
@@ -25,7 +26,8 @@
 			</HBox>
         </CustomListItem>
         <items>
-            <CustomListItem>
+            <CustomListItem
+                type="Navigation">
                 <HBox>
                     <Image 
                         src="images/ic_launcher.png"
