@@ -259,6 +259,10 @@
                 return "art_clear.png";
             }
             
+            function getFormattedTemperature(temperature) {
+                return Math.floor(temperature) +'\xB0';
+            }
+            
 			// create a Model with this data
 			var model = new sap.ui.model.json.JSONModel();
 			//model.setData(data);
@@ -276,6 +280,8 @@
                 listItem.date = getFullDate(listItem.dt*1000);
                 listItem.icon = getIcon(listItem.weather[0].id);
                 listItem.image = getImage(listItem.weather[0].id);
+                listItem.temp.max = getFormattedTemperature(listItem.temp.max);
+                listItem.temp.min = getFormattedTemperature(listItem.temp.min);
                 updatedList.push(listItem);
             }
             
