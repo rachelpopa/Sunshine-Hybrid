@@ -18,7 +18,7 @@
             </VBox>
         </HBox>
         <Text text="Humidity: {humidity}"/>
-        <Text text="Wind: {speed}"/>
+        <Text text="Wind: {fullwind}"/>
         <Text text="Pressure: {pressure}"/>
     </VBox>
 </mvc:View>
