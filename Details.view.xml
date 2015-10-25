@@ -12,7 +12,7 @@
             </VBox>
             <VBox>
                 <Image 
-                        src="images/art_clear.png"
+                        src="images/{image}"
                     />
                 <Text text="{weather/0/main}"/>
             </VBox>

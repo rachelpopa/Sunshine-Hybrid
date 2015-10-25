@@ -561,16 +561,62 @@
                 return month;
             }
             
-            function getDate(time) {
-                return "Wednesday";
-            }
-            
             function getIcon(weatherId) {
+                // Based on weather code data found at:
+                // http://bugs.openweathermap.org/projects/api/wiki/Weather_Condition_Codes
+                if (weatherId >= 200 && weatherId <= 232) {
+                    return "ic_storm.png";
+                } else if (weatherId >= 300 && weatherId <= 321) {
+                    return "ic_light_rain.png";
+                } else if (weatherId >= 500 && weatherId <= 504) {
+                    return "ic_rain.png";
+                } else if (weatherId == 511) {
+                    return "ic_snow.png";
+                } else if (weatherId >= 520 && weatherId <= 531) {
+                    return "ic_rain.png";
+                } else if (weatherId >= 600 && weatherId <= 622) {
+                    return "ic_snow.png";
+                } else if (weatherId >= 701 && weatherId <= 761) {
+                    return "ic_fog.png";
+                } else if (weatherId == 761 || weatherId == 781) {
+                    return "ic_storm.png";
+                } else if (weatherId == 800) {
+                    return "ic_clear.png";
+                } else if (weatherId == 801) {
+                    return "ic_light_clouds.png";
+                } else if (weatherId >= 802 && weatherId <= 804) {
+                    return "ic_cloudy.png";
+                }
                 return "ic_clear.png";
             }
             
             function getImage(weatherId) {
-                return "art_clear";
+                // Based on weather code data found at:
+                // http://bugs.openweathermap.org/projects/api/wiki/Weather_Condition_Codes
+                if (weatherId >= 200 && weatherId <= 232) {
+                    return "art_storm.png";
+                } else if (weatherId >= 300 && weatherId <= 321) {
+                    return "art_light_rain.png";
+                } else if (weatherId >= 500 && weatherId <= 504) {
+                    return "art_rain.png";
+                } else if (weatherId == 511) {
+                    return "art_snow.png";
+                } else if (weatherId >= 520 && weatherId <= 531) {
+                    return "art_rain.png";
+                } else if (weatherId >= 600 && weatherId <= 622) {
+                    return "art_snow.png";
+                } else if (weatherId >= 701 && weatherId <= 761) {
+                    return "art_fog.png";
+                } else if (weatherId == 761 || weatherId == 781) {
+                    return "art_storm.png";
+                } else if (weatherId == 800) {
+                    return "art_clear.png";
+                } else if (weatherId == 801) {
+                    return "art_light_clouds.png";
+                } else if (weatherId >= 802 && weatherId <= 804) {
+                    return "art_cloudy.png";
+                }
+                return "art_clear.png";
             }
             
 			// create a Model with this data
@@ -588,6 +634,8 @@
                //dt is in seconds so it is converted into milliseconds for the date conversion
                 listItem.day = getDay(listItem.dt*1000);
                 listItem.date = getFullDate(listItem.dt*1000);
+                listItem.icon = getIcon(listItem.weather[0].id);
+                listItem.image = getImage(listItem.weather[0].id);
                 updatedList.push(listItem);
             }
             

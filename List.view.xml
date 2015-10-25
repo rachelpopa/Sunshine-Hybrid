@@ -27,7 +27,7 @@
                 </VBox>
                 <VBox>
                     <Image 
-                        src="images/art_clear.png"
+                        src="images/{image}"
                     />
                     <Text text="{weather/0/main}"/>
                 </VBox>
@@ -39,7 +39,7 @@
                 press="onPress">
                 <HBox>
                     <Image 
-                        src="images/ic_launcher.png"
+                        src="images/{icon}"
                     />
                     <VBox>
                         <Text text="{day}"/>
