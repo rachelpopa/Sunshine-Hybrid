@@ -6,10 +6,6 @@
     background-color: #ffffff;
 }
 
-.detailsImage {
-    padding-left:2em;
-}
-
 .listIcon {
     padding-top: 0.8em;
     padding-right: 0.5em;
@@ -17,7 +13,7 @@
 }
 
 .listGroup {
-    width: 25%;
+    width: 40%;
     padding: 0.5em;
 }
 
@@ -31,6 +27,48 @@
 }
 
 .listMin {
+}
+
+.detailsContent {
+    padding: 0.9em;
+}
+
+.detailsTemperature {
+    width: 50%;
+}
+
+.detailsWeatherStatus {
+    width: 50%;
+}
+
+.detailsImage { 
+    width: 25%;
+    margin: auto;
+    /*border:3px solid #8AC007;*/
+    padding: 10px;
+}
+
+.detailsDay {
+    font-size: 20px;
+}
+
+.detailsDate {
+    font-size: 100%;
+}
+
+.detailsDesc {
+    width: 25%;
+    margin: auto;
+    /* border:3px solid #8AC007; */
+    padding: 10px;
+}
+
+.detailsMax {
+    padding-left:3em;
+}
+
+.detailsMin {
+    padding-left:3em;
 }
 
 .sapUiUfdShellBackground, .sapMGlobalBackgroundColor {  

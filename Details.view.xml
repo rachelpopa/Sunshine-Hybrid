@@ -3,17 +3,17 @@
 	xmlns:mvc="sap.ui.core.mvc"
 	xmlns="sap.m"
     class="detailsBackground">
-    <VBox>
-        <Text text="{day}"/>
-        <Text text="{date}"/>
+    <VBox class="detailsContent">
+        <Text text="{day}" class="detailsDay"/>
+        <Text text="{date}" class="detailsDate"/>
         <HBox>
-            <VBox>
+            <VBox class = "detailsTemperature">
                 <Text text="{temp/max}"/>
                 <Text text="{temp/min}"/>
             </VBox>
-            <VBox>
+            <VBox class = "detailsWeatherStatus">
                 <Image src="images/{image}" class="detailsImage"/>
-                <Text text="{weather/0/main}"/>
+                <Text text="{weather/0/main}" class="detailsDesc"/>
             </VBox>
         </HBox>
         <Text text="Humidity: {humidity}"/>

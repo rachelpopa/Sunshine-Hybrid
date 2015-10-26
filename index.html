@@ -45,7 +45,7 @@
                 // If the date we're building the String for is today's date, the format
                 // is "Today, June 24"
                 if (forecastJulianDay == currentJulianDay) {
-                    return "Today"; //, " + getFullMonth(forecastDate.getMonth()) + " " + forecastDate.getDate();
+                    return "Today " + getFullMonth(forecastDate.getMonth()) + " " + forecastDate.getDate();
 
                 } else if ( forecastJulianDay < currentJulianDay + 7 ) {
                     // If the input date is less than a week in the future, just return the day name.
