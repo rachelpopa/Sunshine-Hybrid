@@ -42,10 +42,6 @@
 }
 
 .detailsImage { 
-    width: 25%;
-    margin: auto;
-    /*border:3px solid #8AC007;*/
-    padding: 10px;
 }
 
 .detailsDay {
@@ -57,10 +53,6 @@
 }
 
 .detailsDesc {
-    width: 25%;
-    margin: auto;
-    /* border:3px solid #8AC007; */
-    padding: 10px;
 }
 
 .detailsMax {
