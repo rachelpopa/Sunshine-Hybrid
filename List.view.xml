@@ -11,7 +11,7 @@
                 group : true
             }">
             
-        <headerToolbar>
+        <headerToolbar class="forecastHeader">
 			<Toolbar>
                 <Image src="images/ic_logo.png" />
 			</Toolbar>
@@ -38,16 +38,14 @@
                 type="Navigation"
                 press="onPress">
                 <HBox>
-                    <Image 
-                        src="images/{icon}"
-                    />
-                    <VBox>
-                        <Text text="{day}"/>
-                        <Text text="{weather/0/main}"/>
+                    <Image src="images/{icon}" class="listIcon"/>
+                    <VBox class="listGroup">
+                        <Text text="{day}" class="listDay"/>
+                        <Text text="{weather/0/main}" class="listDesc"/>
                     </VBox>
-                    <VBox>
-                        <Text text="{temp/max}"/>
-                        <Text text="{temp/min}"/>
+                    <VBox class="listGroup">
+                        <Text text="{temp/max}" class="listMax"/>
+                        <Text text="{temp/min}" class="listMin"/>
                     </VBox>
                 </HBox>
             </CustomListItem>

@@ -4,6 +4,8 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta http-equiv='Content-Type' content='text/html;charset=UTF-8'/>
 		
+        <link rel="stylesheet" type="text/css" href="css/style.css" />
+        
 		<title>Sunshine</title>
 		
 		<script src="resources/sap-ui-core.js" 
@@ -43,7 +45,7 @@
                 // If the date we're building the String for is today's date, the format
                 // is "Today, June 24"
                 if (forecastJulianDay == currentJulianDay) {
-                    return "Today, " + getFullMonth(forecastDate.getMonth()) + " " + forecastDate.getDate();
+                    return "Today"; //, " + getFullMonth(forecastDate.getMonth()) + " " + forecastDate.getDate();
 
                 } else if ( forecastJulianDay < currentJulianDay + 7 ) {
                     // If the input date is less than a week in the future, just return the day name.
@@ -346,18 +348,30 @@
                 },
                 content : details
             });
-			
-			// create a mobile App holding the pages and place the App into the HTML document
-			var app = new sap.m.App({
+            
+            var app = new sap.m.App({
 				pages: [page1, page2]
-			}).placeAt("content");
-			
+			});
+            
+            
 			// set the model to the App; it will be propagated to the children
 			app.setModel(model);
+            
+            
+            new sap.m.Shell({
+                   app : app,
+                   height : "100%",
+                   width : "100%"
+                }).placeAt("content");
+			// create a mobile App holding the pages and place the App into the HTML document
+			//var app = new sap.m.App({
+		//		pages: [page1, page2]
+		//	}).placeAt("content");
+			
 			
 		</script>
 		
 	</head>
-	<body id="content" class="sapUiBody">
+	<body id="content" class="sapUiBody" class="forecastHeader">
 	</body>
 </html> 

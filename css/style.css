@@ -1,0 +1,43 @@
+.forecastHeader {
+    background-color: #ff1ca8f4;
+}
+
+.detailsBackground {
+    background-color: #ffffff;
+}
+
+.detailsImage {
+    padding-left:2em;
+}
+
+.listIcon {
+    padding-top: 0.8em;
+    padding-right: 0.5em;
+    padding-left: 0.4em;
+}
+
+.listGroup {
+    width: 25%;
+    padding: 0.5em;
+}
+
+.listDay {
+}
+
+.listDesc {
+}
+
+.listMax {
+}
+
+.listMin {
+}
+
+.sapUiUfdShellBackground, .sapMGlobalBackgroundColor {  
+    background-color: transparent !important;  
+    background-image: none !important;  
+}  
+        
+.sapMShellGlobalInnerBackground {  
+    background-image: none !important;  
+}  

@@ -1,7 +1,8 @@
 <mvc:View
 	height="100%"
 	xmlns:mvc="sap.ui.core.mvc"
-	xmlns="sap.m">
+	xmlns="sap.m"
+    class="detailsBackground">
     <VBox>
         <Text text="{day}"/>
         <Text text="{date}"/>
@@ -11,9 +12,7 @@
                 <Text text="{temp/min}"/>
             </VBox>
             <VBox>
-                <Image 
-                        src="images/{image}"
-                    />
+                <Image src="images/{image}" class="detailsImage"/>
                 <Text text="{weather/0/main}"/>
             </VBox>
         </HBox>
