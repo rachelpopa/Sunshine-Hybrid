@@ -3,8 +3,6 @@
 	<head>
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta http-equiv='Content-Type' content='text/html;charset=UTF-8'/>
-		
-        <link rel="stylesheet" type="text/css" href="css/style.css" />
         
 		<title>Sunshine</title>
         
@@ -26,82 +24,77 @@
 		
 		<script type="text/javascript">
 			
-            
-            
-			// create a Model with this data
-			var model = new sap.ui.model.json.JSONModel();
-			//model.setData(data);
-            model.loadData("http://api.openweathermap.org/data/2.5/forecast/daily?id=524901&APPID=KEY-REMOVED&q=Regina&mode=json&units=metric&cnt=14", "", false);
+                // create a Model with this data
+                var model = new sap.ui.model.json.JSONModel();
+                //model.setData(data);
+                model.loadData("http://api.openweathermap.org/data/2.5/forecast/daily?id=524901&APPID=KEY-REMOVED&q=Regina&mode=json&units=metric&cnt=14", "", false);
 
-            var listData = model.getProperty("/list"); 
+                var listData = model.getProperty("/list"); 
 
-            var updatedList = [];
-            
-            for(var i = 0; i < listData.length; i++) {
-               // alert(listData[i].dt);
-               var listItem = listData[i];
-               //dt is in seconds so it is converted into milliseconds for the date conversion
-                listItem.day = getDay(listItem.dt*1000);
-                listItem.date = getFullDate(listItem.dt*1000);
-                listItem.icon = getIcon(listItem.weather[0].id);
-                listItem.image = getImage(listItem.weather[0].id);
-                listItem.temp.max = getFormattedTemperature(listItem.temp.max);
-                listItem.temp.min = getFormattedTemperature(listItem.temp.min);
-                listItem.fullwind = getFormattedWind(listItem.speed, listItem.deg);
-                listItem.pressure = getFormattedPressure(listItem.pressure);
-                listItem.humidity = getFormattedHumidity(listItem.humidity);
-                updatedList.push(listItem);
-            }
-            
-			// create the UI
-            
-            var list = new sap.ui.xmlview({
-               viewName : "sap.ui.sunshine.wt.List"
-            });
-                     
-			//create the page holding the List
-			var page1 = new sap.m.Page({
-                showHeader : false,
-				content : list
-			});
-            
-            var details = new sap.ui.xmlview({
-                viewName : "sap.ui.sunshine.wt.Details"
-            });
-            
-            // create the detail page
-            var page2 = new sap.m.Page("page2", {
-                title: "Details",
-                showNavButton: true,
-                navButtonPress: function(){
-                    app.back();
-                },
-                content : details
-            });
-            
-            var app = new sap.m.App({
-				pages: [page1, page2]
-			});
-            
-            
-			// set the model to the App; it will be propagated to the children
-			app.setModel(model);
-            
-            
-            new sap.m.Shell({
-                   app : app,
-                   height : "100%",
-                   width : "100%"
-                }).placeAt("content");
-			// create a mobile App holding the pages and place the App into the HTML document
-			//var app = new sap.m.App({
-		//		pages: [page1, page2]
-		//	}).placeAt("content");
-			
-			
+                var updatedList = [];
+                
+                for(var i = 0; i < listData.length; i++) {
+                   // alert(listData[i].dt);
+                   var listItem = listData[i];
+                   //dt is in seconds so it is converted into milliseconds for the date conversion
+                    listItem.day = getDay(listItem.dt*1000);
+                    listItem.date = getFullDate(listItem.dt*1000);
+                    listItem.icon = getIcon(listItem.weather[0].id);
+                    listItem.image = getImage(listItem.weather[0].id);
+                    listItem.temp.max = getFormattedTemperature(listItem.temp.max);
+                    listItem.temp.min = getFormattedTemperature(listItem.temp.min);
+                    listItem.fullwind = getFormattedWind(listItem.speed, listItem.deg);
+                    listItem.pressure = getFormattedPressure(listItem.pressure);
+                    listItem.humidity = getFormattedHumidity(listItem.humidity);
+                    updatedList.push(listItem);
+                }
+                
+                // create the UI
+                
+                var list = new sap.ui.xmlview({
+                   viewName : "sap.ui.sunshine.wt.List"
+                });
+                         
+                //create the page holding the List
+                var page1 = new sap.m.Page({
+                    showHeader : false,
+                    content : list
+                });
+                
+                var details = new sap.ui.xmlview({
+                    viewName : "sap.ui.sunshine.wt.Details"
+                });
+                
+                // create the detail page
+                var page2 = new sap.m.Page("page2", {
+                    title: "Details",
+                    showNavButton: true,
+                    navButtonPress: function(){
+                        app.back();
+                    },
+                    content : details
+                });
+                
+                var app = new sap.m.App({
+                    class : "openUISunshine",
+                    pages : [page1, page2]
+                });
+                
+                
+                // set the model to the App; it will be propagated to the children
+                app.setModel(model);
+                
+                sap.ui.getCore().attachInit(function () {
+                    new sap.m.Shell({
+                           app : app,
+                           height : "100%",
+                           width : "100%"
+                        }).placeAt("content");
+                });
+                
 		</script>
 		
 	</head>
-	<body id="content" class="sapUiBody" class="forecastHeader">
+	<body id="content" class="sapUiBody forecastHeader">
 	</body>
 </html> 

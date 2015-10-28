@@ -1,65 +1,63 @@
-.forecastHeader {
+.openUISunshine .forecastHeader {
     background-color: #ff1ca8f4;
 }
 
-.detailsBackground {
-    background-color: #ffffff;
-}
-
-.listIcon {
+.openUISunshine .listIcon {
     padding-top: 0.8em;
     padding-right: 0.5em;
     padding-left: 0.4em;
 }
 
-.listGroup {
+.openUISunshine .listGroup {
     width: 40%;
     padding: 0.5em;
 }
 
-.listDay {
+.openUISunshine .listDay {
 }
 
-.listDesc {
+.openUISunshine .listDesc {
 }
 
-.listMax {
+.openUISunshine .listMax {
 }
 
-.listMin {
+.openUISunshine .listMin {
 }
 
-.detailsContent {
+.openUISunshine .detailsContent {
     padding: 0.9em;
+    background-color: #ffffff;
 }
 
-.detailsTemperature {
+.openUISunshine .detailsTemperature {
     width: 50%;
 }
 
-.detailsWeatherStatus {
+.openUISunshine .detailsWeatherStatus {
     width: 50%;
 }
 
-.detailsImage { 
+.openUISunshine .detailsImage { 
 }
 
-.detailsDay {
+.openUISunshine .detailsDay {
     font-size: 20px;
 }
 
-.detailsDate {
+.openUISunshine .detailsDate {
     font-size: 100%;
 }
 
-.detailsDesc {
+.openUISunshine .detailsDesc {
+    font-size: 50px;
 }
 
-.detailsMax {
+.openUISunshine .detailsMax {
     padding-left:3em;
 }
 
-.detailsMin {
+.openUISunshine .detailsMin {
     padding-left:3em;
 }
 
