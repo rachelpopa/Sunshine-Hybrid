@@ -1,6 +1,7 @@
 <mvc:View
 	height="100%"
 	xmlns:mvc="sap.ui.core.mvc"
+    controllerName="sap.ui.sunshine.wt.Details"
 	xmlns="sap.m"
     class="detailsBackground">
     <VBox class="detailsContent">
@@ -16,8 +17,8 @@
                 <Text text="{weather/0/main}" class="detailsDesc"/>
             </VBox>
         </HBox>
-        <Text text="Humidity: {humidity}" class="detailsHumidity"/>
-        <Text text="Wind: {fullwind}" class="detailsWind"/>
-        <Text text="Pressure: {pressure}" class="detailsPressure"/>
+            <Text text="{i18n>humidity} {humidity}" class="detailsHumidity"/>
+            <Text text=" {i18n>wind} {fullwind}" class="detailsWind"/>
+            <Text text=" {i18n>pressure} {pressure}" class="detailsPressure"/>
     </VBox>
 </mvc:View>
