@@ -49,8 +49,7 @@
                     updatedList.push(listItem);
                 }
                 
-                // create the UI
-                
+                // create the UI        
                 var list = new sap.ui.xmlview({
                    viewName : "sap.ui.sunshine.wt.List"
                 });
@@ -60,19 +59,10 @@
                     showHeader : false,
                     content : list
                 });
-                
-                var details = new sap.ui.xmlview({
-                    viewName : "sap.ui.sunshine.wt.Details"
-                });
-                
+
                 // create the detail page
-                var page2 = new sap.m.Page("page2", {
-                    title: "Details",
-                    showNavButton: true,
-                    navButtonPress: function(){
-                        app.back();
-                    },
-                    content : details
+                var page2 = new sap.ui.xmlview("page2", {
+                    viewName : "sap.ui.sunshine.wt.Details"
                 });
                 
                 var app = new sap.m.App({
