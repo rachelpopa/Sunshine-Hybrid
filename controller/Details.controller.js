@@ -3,7 +3,7 @@ sap.ui.define([
    "sap/ui/model/resource/ResourceModel"
 ], function (Controller, ResourceModel) {
    "use strict";
-   return Controller.extend("sap.ui.sunshine.wt.Details", {
+   return Controller.extend("sap.ui.sunshine.wt.controller.Details", {
      onInit : function () {
      // set i18n model on view
          var i18nModel = new ResourceModel({

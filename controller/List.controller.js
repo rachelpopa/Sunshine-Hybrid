@@ -3,7 +3,7 @@ sap.ui.define([
 	], function(Controller) {
 	"use strict";
 
-	var ListController = Controller.extend("sap.ui.sunshine.wt.List", {
+	var ListController = Controller.extend("sap.ui.sunshine.wt.controller.List", {
 
 		onInit : function (evt) {
 		},

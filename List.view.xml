@@ -1,5 +1,5 @@
 <mvc:View
-    controllerName="sap.ui.sunshine.wt.List"
+    controllerName="sap.ui.sunshine.wt.controller.List"
 	xmlns:mvc="sap.ui.core.mvc"
 	xmlns="sap.m">
 	<List
