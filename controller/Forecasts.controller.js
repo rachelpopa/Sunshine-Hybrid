@@ -3,8 +3,7 @@ sap.ui.define([
 	], function(Controller) {
 	"use strict";
 
-	var ForecastsController = Controller.extend("sap.ui.sunshine.wt.controller.Forecasts", {
-
+	return Controller.extend("sap.ui.sunshine.wt.controller.Forecasts", {
 		onInit : function (evt) {
 		},
         
@@ -14,7 +13,4 @@ sap.ui.define([
 			app.to("detailsPage");
         }
 	});
-
-	return ForecastsController;
-
 }); 
