@@ -50,26 +50,21 @@
                 }
                 
                 // create the UI        
-                var list = new sap.ui.xmlview({
-                   viewName : "sap.ui.sunshine.wt.List"
-                });
-                         
-                //create the page holding the List
-                var page1 = new sap.m.Page({
-                    showHeader : false,
-                    content : list
+                
+                //Create page that lists forecasts
+                var forecastsPage = new sap.ui.xmlview("forecastsPage", {
+                   viewName : "sap.ui.sunshine.wt.Forecasts"
                 });
 
                 // create the detail page
-                var page2 = new sap.ui.xmlview("page2", {
+                var detailsPage = new sap.ui.xmlview("detailsPage", {
                     viewName : "sap.ui.sunshine.wt.Details"
                 });
                 
                 var app = new sap.m.App({
                     class : "openUISunshine",
-                    pages : [page1, page2]
-                });
-                
+                    pages : [forecastsPage, detailsPage]
+                });        
                 
                 // set the model to the App; it will be propagated to the children
                 app.setModel(model);
