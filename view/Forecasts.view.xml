@@ -40,14 +40,14 @@
                     type="Navigation"
                     press="onPress">
                     <HBox>
-                        <Image src="images/{icon}" class="listIcon"/>
+                        <Image src="images/{path : 'weather/0/id', formatter : '.formatter.getIcon'}" class="listIcon"/>
                         <VBox class="listGroup">
-                            <Text text="{day}" class="listDay"/>
+                            <Text text="{path : 'dt', formatter : '.formatter.getDay'}" class="listDay"/>
                             <Text text="{weather/0/main}" class="listDesc"/>
                         </VBox>
                         <VBox class="listGroup">
-                            <Text text="{temp/max}" class="listMax"/>
-                            <Text text="{temp/min}" class="listMin"/>
+                            <Text text="{path : 'temp/max', formatter : '.formatter.getFormattedTemperature'}" class="listMax"/>
+                            <Text text="{path : 'temp/min', formatter : '.formatter.getFormattedTemperature'}" class="listMin"/>
                         </VBox>
                     </HBox>
                 </CustomListItem>

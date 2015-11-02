@@ -1,9 +1,12 @@
 sap.ui.define([
-		'sap/ui/core/mvc/Controller'
-	], function(Controller) {
+		"sap/ui/core/mvc/Controller",
+        "sap/ui/sunshine/wt/model/formatter"
+	], function(Controller, formatter) {
 	"use strict";
 
 	return Controller.extend("sap.ui.sunshine.wt.controller.Forecasts", {
+        formatter : formatter,
+        
 		onInit : function (evt) {
 		},
         

@@ -1,9 +1,12 @@
 sap.ui.define([
     "sap/ui/core/mvc/Controller",
-	"sap/ui/core/routing/History"
-], function (Controller, History) {
+	"sap/ui/core/routing/History",
+    "sap/ui/sunshine/wt/model/formatter"
+], function (Controller, History, formatter) {
     "use strict";
     return Controller.extend("sap.ui.sunshine.wt.controller.Details", {
+        formatter : formatter,
+        
         onInit : function () {
 
             var routeToDetails = sap.ui.core.UIComponent.getRouterFor(this);

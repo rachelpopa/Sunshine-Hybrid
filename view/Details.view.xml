@@ -9,21 +9,21 @@
         showNavButton="true"
         navButtonPress="onNavPress">
         <VBox class="detailsContent">
-            <Text text="{day}" class="detailsDay"/>
-            <Text text="{date}" class="detailsDate"/>
+            <Text text="{path : 'dt', formatter : '.formatter.getDay'}" class="detailsDay"/>
+            <Text text="{path : 'dt', formatter : '.formatter.getFullDate'}" class="detailsDate"/>
             <HBox>
                 <VBox class = "detailsTemperature">
-                    <Text text="{temp/max}" class = "detailsMax"/>
-                    <Text text="{temp/min}" class = "detailsMin"/>
+                    <Text text="{path : 'temp/max', formatter : '.formatter.getFormattedTemperature'}" class = "detailsMax"/>
+                    <Text text="{path : 'temp/min', formatter : '.formatter.getFormattedTemperature'}" class = "detailsMin"/>
                 </VBox>
                 <VBox class = "detailsWeatherStatus">
-                    <Image src="images/{image}" class="detailsImage"/>
+                    <Image src="images/{path : 'weather/0/id', formatter : '.formatter.getImage'}" class="detailsImage"/>
                     <Text text="{weather/0/main}" class="detailsDesc"/>
                 </VBox>
             </HBox>
-                <Text text="{i18n>humidity} {humidity}" class="detailsHumidity"/>
-                <Text text=" {i18n>wind} {fullwind}" class="detailsWind"/>
-                <Text text=" {i18n>pressure} {pressure}" class="detailsPressure"/>
+                <Text text="{i18n>humidity} {path : 'humidity', formatter : '.formatter.getFormattedHumidity'}" class="detailsHumidity"/>
+                <Text text=" {i18n>wind} {parts : ['speed', 'deg'], formatter : '.formatter.getFormattedWind'}" class="detailsWind"/>
+                <Text text=" {i18n>pressure} {path : 'pressure', formatter : '.formatter.getFormattedPressure'}" class="detailsPressure"/>
         </VBox>
     </Page>
 </mvc:View>
