@@ -3,11 +3,8 @@
 	<head>
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta http-equiv='Content-Type' content='text/html;charset=UTF-8'/>
-        
 		<title>Sunshine</title>
-        
         <script src="helpers.js" type="text/javascript"></script>
-		
 		<script src="resources/sap-ui-core.js" 
             id="sap-ui-bootstrap"
             data-sap-ui-libs="sap.m,sap.ui.layout" 
@@ -20,66 +17,17 @@
                 }'>
         </script>
 		<!-- load the mobile lib "sap.m", the layout lib and the "sap_bluecrystal" theme -->
-		
-		
-		<script type="text/javascript">
-			
-                // create a Model with this data
-                var model = new sap.ui.model.json.JSONModel();
-                //model.setData(data);
-                model.loadData("http://api.openweathermap.org/data/2.5/forecast/daily?id=524901&APPID=KEY-REMOVED&q=Regina&mode=json&units=metric&cnt=14", "", false);
-
-                var listData = model.getProperty("/list"); 
-
-                var updatedList = [];
-                
-                for(var i = 0; i < listData.length; i++) {
-                   // alert(listData[i].dt);
-                   var listItem = listData[i];
-                   //dt is in seconds so it is converted into milliseconds for the date conversion
-                    listItem.day = getDay(listItem.dt*1000);
-                    listItem.date = getFullDate(listItem.dt*1000);
-                    listItem.icon = getIcon(listItem.weather[0].id);
-                    listItem.image = getImage(listItem.weather[0].id);
-                    listItem.temp.max = getFormattedTemperature(listItem.temp.max);
-                    listItem.temp.min = getFormattedTemperature(listItem.temp.min);
-                    listItem.fullwind = getFormattedWind(listItem.speed, listItem.deg);
-                    listItem.pressure = getFormattedPressure(listItem.pressure);
-                    listItem.humidity = getFormattedHumidity(listItem.humidity);
-                    updatedList.push(listItem);
-                }
-                
-                // create the UI        
-                
-                //Create page that lists forecasts
-                var forecastsPage = new sap.ui.xmlview("forecastsPage", {
-                   viewName : "sap.ui.sunshine.wt.Forecasts"
-                });
-
-                // create the detail page
-                var detailsPage = new sap.ui.xmlview("detailsPage", {
-                    viewName : "sap.ui.sunshine.wt.Details"
-                });
-                
-                var app = new sap.m.App({
-                    class : "openUISunshine",
-                    pages : [forecastsPage, detailsPage]
-                });        
-                
-                // set the model to the App; it will be propagated to the children
-                app.setModel(model);
-                
-                sap.ui.getCore().attachInit(function () {
-                    new sap.m.Shell({
-                           app : app,
-                           height : "100%",
-                           width : "100%"
-                        }).placeAt("content");
-                });
-                
-		</script>
-		
+		<script type="text/javascript">   
+            sap.ui.getCore().attachInit(function () {
+                new sap.m.Shell({
+                    app: new sap.ui.core.ComponentContainer({
+                        name: "sap.ui.sunshine.wt",
+                        height: "100%"
+                    })
+                }).placeAt("content");
+            });  
+		</script>	
 	</head>
-	<body id="content" class="sapUiBody forecastHeader">
+	<body id="content" class="sapUiBody">
 	</body>
 </html> 

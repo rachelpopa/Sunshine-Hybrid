@@ -7,10 +7,15 @@ sap.ui.define([
 		onInit : function (evt) {
 		},
         
-        onPress : function (evt) {
-            var oBindingContext = evt.getSource().getBindingContext(); 
-            detailsPage.setBindingContext(oBindingContext); // make sure the detail page has the correct data context
-			app.to("detailsPage");
+        onPress : function (evt) {   
+            var chosenForecast = evt.getSource();
+			var routeToDetails = sap.ui.core.UIComponent.getRouterFor(this);
+            
+            var context = {
+                forecast : evt.getSource().getBindingContext().getPath().substr(6)
+            };
+
+			routeToDetails.navTo("details", context);        
         }
 	});
 }); 
