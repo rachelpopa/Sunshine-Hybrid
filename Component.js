@@ -17,7 +17,7 @@ sap.ui.define([
             // create a Model with this data
             var model = new sap.ui.model.json.JSONModel();
             //model.setData(data);
-            model.loadData("http://api.openweathermap.org/data/2.5/forecast/daily?id=524901&APPID=***REMOVED***&q=Regina&mode=json&units=metric&cnt=14", "", false);
+            model.loadData("http://api.openweathermap.org/data/2.5/forecast/daily?id=524901&APPID=KEY-REMOVED&q=Regina&mode=json&units=metric&cnt=14", "", false);
 
             var listData = model.getProperty("/list"); 
 
