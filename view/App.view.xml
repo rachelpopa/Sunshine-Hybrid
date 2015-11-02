@@ -1,0 +1,6 @@
+<mvc:View
+	xmlns:mvc="sap.ui.core.mvc"
+    controllerName="sap.ui.sunshine.wt.controller.App"
+	xmlns="sap.m">
+    <App id="app" class="openUISunshine" />
+</mvc:View>
