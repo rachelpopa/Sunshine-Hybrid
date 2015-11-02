@@ -42,6 +42,12 @@ sap.ui.define([
             // set the model to the App; it will be propagated to the children
             this.setModel(model);
             
+            // set i18n model
+             var i18nModel = new ResourceModel({
+                bundleName : "sap.ui.sunshine.wt.i18n.i18n"
+             });
+             this.setModel(i18nModel, "i18n");
+            
             // create the views based on the url/hash
 			this.getRouter().initialize();
 
