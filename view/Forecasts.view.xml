@@ -13,9 +13,9 @@
                     group : true
                 }">
                 
-            <headerToolbar class="forecastHeader">
+            <headerToolbar>
                 <Toolbar>
-                    <Image src="images/ic_logo.png" />
+                    <Image src="images/ic_logo.png" class="forecastHeader" />
                 </Toolbar>
             </headerToolbar>
             <CustomListItem

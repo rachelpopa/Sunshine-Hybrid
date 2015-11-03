@@ -2,6 +2,7 @@
     background-color: #ff1ca8f4;
 }
 
+/*Styling for main list of forecasts*/
 .openUISunshine .listIcon {
     padding-top: 0.8em;
     padding-right: 0.5em;
@@ -14,19 +15,28 @@
 }
 
 .openUISunshine .listDay {
+    font-size: 1em;
+    color: #000000;
 }
 
 .openUISunshine .listDesc {
+    font-size: 0.8em;
+    color: #646464;
 }
 
-.openUISunshine .listMax {
+.openUISunshine .listMax {    
+    font-size: 1em;
+    color: #000000;
 }
 
 .openUISunshine .listMin {
+    font-size: 0.8em;
+    color: #646464;
 }
 
+/*Styling for details page*/
 .openUISunshine .detailsContent {
-    padding: 0.9em;
+    padding: 0.4em;
     background-color: #ffffff;
 }
 
@@ -42,25 +52,48 @@
 }
 
 .openUISunshine .detailsDay {
-    font-size: 20px;
+    font-size: 1.2em;
+    color: #000000;
 }
 
 .openUISunshine .detailsDate {
-    font-size: 100%;
+    font-size: 1em;
+    color: #646464;
 }
 
 .openUISunshine .detailsDesc {
-    font-size: 50px;
+    font-size: 1em;
+    color: #646464;
 }
 
 .openUISunshine .detailsMax {
-    padding-left:3em;
+    font-size: 6em;
+    color: #000000;
+    padding-left:0.1em;
 }
 
 .openUISunshine .detailsMin {
-    padding-left:3em;
+    font-size: 4em;
+    color: #646464;
+    padding-left:0.1em;
 }
 
+.openUISunshine .detailsHumidity {
+    font-size: 1em;
+    color: #000000;
+}
+
+.openUISunshine .detailsWind {
+    font-size: 1em;
+    color: #000000;
+}
+
+.openUISunshine .detailsPressure {
+    font-size: 1em;
+    color: #000000;  
+}
+
+/* Override SAP styling */
 .sapUiUfdShellBackground, .sapMGlobalBackgroundColor {  
     background-color: transparent !important;  
     background-image: none !important;  
