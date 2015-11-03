@@ -14,13 +14,16 @@ sap.ui.define([], function () {
                 //Convert time to milliseconds
                 var forecastDate = new Date(time * 1000);
                 var forecastJulianDay = forecastDate.getJulian();
-                
                 // If the date we're building the String for is today's date, the format
                 // is "Today, June 24"
                 if (forecastJulianDay == currentJulianDay) {
-                    return "Today " + getFullMonth(forecastDate.getMonth()) + " " + forecastDate.getDate();
+                    return "Today, " + getFullMonth(forecastDate.getMonth()) + " " + forecastDate.getDate();
 
-                } else if ( forecastJulianDay < currentJulianDay + 7 ) {
+                }
+                else if ( forecastJulianDay == (currentJulianDay + 1)) {
+                    return "Tomorrow";
+                }
+                else if ( forecastJulianDay < currentJulianDay + 7 ) {
                     // If the input date is less than a week in the future, just return the day name.
                     return getFullWeekDay(forecastDate.getDay());
                 } else {
