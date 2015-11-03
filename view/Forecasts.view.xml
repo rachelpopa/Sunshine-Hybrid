@@ -4,37 +4,46 @@
 	xmlns="sap.m">
     <Page
         showHeader="false">
+        <Toolbar>
+            <Image src="images/ic_logo.png" class="forecastHeader" />
+        </Toolbar>
         <List
             items="{
                     path : '/list', 
                     sorter : [{
                         path : 'dt'
                     }],
-                    group : true
-                }">
-                
-            <headerToolbar>
-                <Toolbar>
-                    <Image src="images/ic_logo.png" class="forecastHeader" />
-                </Toolbar>
-            </headerToolbar>
-            <CustomListItem
-                id="forecastToday"
-                type="Navigation">
-                <HBox>
-                    <VBox>
-                        <Text text="{day}"/>
-                        <Text text="{temp/max}"/>
-                        <Text text="{temp/min}"/>
-                    </VBox>
-                    <VBox>
-                        <Image 
-                            src="images/{image}"
-                        />
-                        <Text text="{weather/0/main}"/>
-                    </VBox>
-                </HBox>
-            </CustomListItem>
+                    startIndex : 0,
+                    length : 1
+                }">               
+            <items>
+                <CustomListItem
+                    type="Navigation"
+                    press="onPress">
+                    <HBox>
+                        <VBox>
+                            <Text text="{path : 'dt', formatter : '.formatter.getDay'}"/>
+                            <Text text="{path : 'temp/max', formatter : '.formatter.getFormattedTemperature'}"/>
+                            <Text text="{path : 'temp/min', formatter : '.formatter.getFormattedTemperature'}"/>
+                        </VBox>
+                        <VBox>
+                            <Image 
+                                src="images/{path : 'weather/0/id', formatter : '.formatter.getImage'}"
+                            />
+                            <Text text="{weather/0/main}"/>
+                        </VBox>
+                    </HBox>
+                </CustomListItem>
+            </items>
+        </List>
+        <List
+            items="{
+                    path : '/list', 
+                    sorter : [{
+                        path : 'dt'
+                    }],
+                    startIndex : 1
+                }">               
             <items>
                 <CustomListItem
                     type="Navigation"
