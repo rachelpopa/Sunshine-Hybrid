@@ -24,11 +24,13 @@
 }
 .openUISunshine .firstMax {
     font-size: 5em;
-    color: #ffffff;
+    color: #ffffff; 
+    padding-left: 0.7em;
 }
 .openUISunshine .firstMin {
     font-size: 3em;
     color: #ffffff;
+    padding-left: 0.9em;
 }
 
 /*Styling for main list of forecasts*/
@@ -51,6 +53,7 @@
 .openUISunshine .listDesc {
     font-size: 0.8em;
     color: #646464;
+    text-align: center;
 }
 
 .openUISunshine .listMax {    
@@ -67,6 +70,10 @@
 .openUISunshine .detailsContent {
     padding: 0.4em;
     background-color: #ffffff;
+}
+
+.openUISunshine .detailsHeader {
+    background-color: #1ca8f4;
 }
 
 .openUISunshine .detailsTemperature {

@@ -6,8 +6,12 @@
     class="detailsBackground">
     <Page
         title="Details"
-        showNavButton="true"
-        navButtonPress="onNavPress">
+        showHeader="false">
+        <Toolbar>
+			<Button type="Back" 
+                press="onNavPress"/>
+            <Image src="images/ic_logo.png" class="detailsHeader" />
+        </Toolbar>
         <VBox class="detailsContent">
             <Text text="{path : 'dt', formatter : '.formatter.getDay'}" class="detailsDay"/>
             <Text text="{path : 'dt', formatter : '.formatter.getFullDate'}" class="detailsDate"/>
