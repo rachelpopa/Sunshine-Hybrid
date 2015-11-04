@@ -27,7 +27,7 @@
                             <Text text="{path : 'temp/max', formatter : '.formatter.getFormattedTemperature'}" class="firstMax"/>
                             <Text text="{path : 'temp/min', formatter : '.formatter.getFormattedTemperature'}" class="firstMin"/>
                         </VBox>
-                        <VBox>
+                        <VBox class="firstRightBox">
                             <Image 
                                 src="images/{path : 'weather/0/id', formatter : '.formatter.getImage'}" class="firstImage"
                             />

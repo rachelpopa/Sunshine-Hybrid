@@ -12,7 +12,8 @@
                 press="onNavPress"/>
             <Image src="images/ic_logo.png" class="detailsHeader" />
         </Toolbar>
-        <VBox class="detailsContent">
+        <VBox class="detailsContent" 
+            height="100%">
             <Text text="{path : 'dt', formatter : '.formatter.getDay'}" class="detailsDay"/>
             <Text text="{path : 'dt', formatter : '.formatter.getFullDate'}" class="detailsDate"/>
             <HBox>
@@ -25,9 +26,9 @@
                     <Text text="{weather/0/main}" class="detailsDesc"/>
                 </VBox>
             </HBox>
-                <Text text="{i18n>humidity} {path : 'humidity', formatter : '.formatter.getFormattedHumidity'}" class="detailsHumidity"/>
-                <Text text=" {i18n>wind} {parts : ['speed', 'deg'], formatter : '.formatter.getFormattedWind'}" class="detailsWind"/>
-                <Text text=" {i18n>pressure} {path : 'pressure', formatter : '.formatter.getFormattedPressure'}" class="detailsPressure"/>
+            <Text text="{i18n>humidity} {path : 'humidity', formatter : '.formatter.getFormattedHumidity'}" class="detailsHumidity"/>
+            <Text text=" {i18n>wind} {parts : ['speed', 'deg'], formatter : '.formatter.getFormattedWind'}" class="detailsWind"/>
+            <Text text=" {i18n>pressure} {path : 'pressure', formatter : '.formatter.getFormattedPressure'}" class="detailsPressure"/>
         </VBox>
     </Page>
 </mvc:View>

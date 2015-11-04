@@ -9,23 +9,34 @@
     padding: 0.5em;
 }
 
+.openUISunshine .firstRightBox { 
+}
+
 .openUISunshine .firstDay {
     font-size: 1em;
     color: #ffffff;
 }
 
-.openUISunshine .firstImage {
-    
+.openUISunshine .firstImage { 
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .openUISunshine .firstDesc {
     font-size: 1em;
     color: #ffffff;
+    
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 4em;
+    text-align: center;
 }
 .openUISunshine .firstMax {
     font-size: 5em;
     color: #ffffff; 
-    padding-left: 0.7em;
+    padding-left: 0.4em;
 }
 .openUISunshine .firstMin {
     font-size: 3em;
