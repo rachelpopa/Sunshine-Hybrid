@@ -19,18 +19,19 @@
             <items>
                 <CustomListItem
                     type="Navigation"
-                    press="onPress">
+                    press="onPress"
+                    class="firstListItem">
                     <HBox>
                         <VBox>
-                            <Text text="{path : 'dt', formatter : '.formatter.getDay'}"/>
-                            <Text text="{path : 'temp/max', formatter : '.formatter.getFormattedTemperature'}"/>
-                            <Text text="{path : 'temp/min', formatter : '.formatter.getFormattedTemperature'}"/>
+                            <Text text="{path : 'dt', formatter : '.formatter.getDay'}" class="firstDay"/>
+                            <Text text="{path : 'temp/max', formatter : '.formatter.getFormattedTemperature'}" class="firstMax"/>
+                            <Text text="{path : 'temp/min', formatter : '.formatter.getFormattedTemperature'}" class="firstMin"/>
                         </VBox>
                         <VBox>
                             <Image 
-                                src="images/{path : 'weather/0/id', formatter : '.formatter.getImage'}"
+                                src="images/{path : 'weather/0/id', formatter : '.formatter.getImage'}" class="firstImage"
                             />
-                            <Text text="{weather/0/main}"/>
+                            <Text text="{weather/0/main}" class="firstDesc"/>
                         </VBox>
                     </HBox>
                 </CustomListItem>
