@@ -4,7 +4,7 @@
 	xmlns="sap.m">
     <Page
         showHeader="false">
-        <Toolbar>
+        <Toolbar class="forecastHeader">
             <Image src="images/ic_logo.png" class="forecastHeader" />
         </Toolbar>
         <List
@@ -51,11 +51,11 @@
                     press="onPress">
                     <HBox>
                         <Image src="images/{path : 'weather/0/id', formatter : '.formatter.getIcon'}" class="listIcon"/>
-                        <VBox class="listGroup">
+                        <VBox class="listLeft">
                             <Text text="{path : 'dt', formatter : '.formatter.getDay'}" class="listDay"/>
                             <Text text="{weather/0/main}" class="listDesc"/>
                         </VBox>
-                        <VBox class="listGroup">
+                        <VBox class="listRight">
                             <Text text="{path : 'temp/max', formatter : '.formatter.getFormattedTemperature'}" class="listMax"/>
                             <Text text="{path : 'temp/min', formatter : '.formatter.getFormattedTemperature'}" class="listMin"/>
                         </VBox>
