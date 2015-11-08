@@ -2,8 +2,16 @@
     background-color: #1ca8f4;
 }
 
-/*Styling for first forecast*/
+.openUISunshine .menuButton {
+    width: 20%;
+    color: #ffffff 
+}
 
+.openUISunshine .toolbarLeft {
+    width: 80%;
+}
+
+/*Styling for first forecast*/
 .openUISunshine .firstListItem {
     background-color: #1ca8f4;
     padding: 0.5em;
@@ -90,6 +98,8 @@
 
 .openUISunshine .detailsHeader {
     background-color: #1ca8f4;
+    padding-top: 0.5em;
+    padding-left: 0.6em;
 }
 
 .openUISunshine .detailsBackButton {
