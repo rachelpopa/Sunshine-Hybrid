@@ -1,0 +1,13 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core"
+	xmlns:u="sap.ui.unified">
+		<u:Menu  
+			itemSelect="handleMenuItemPress">
+			<u:MenuTextFieldItem 
+				label="Location" 
+				enabled="true" 
+				startsSection="true" 
+				icon="sap-icon://filter"/>
+		</u:Menu>
+</core:FragmentDefinition>

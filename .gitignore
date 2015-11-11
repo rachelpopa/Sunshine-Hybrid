@@ -3,3 +3,5 @@ resources/
 junk/
 # Bootstrap files
 bootstrap-3.3.5-dist/
+*.sublime-workspace
+.DS_Store

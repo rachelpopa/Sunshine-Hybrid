@@ -19,6 +19,23 @@ sap.ui.define([
             };
 
 			routeToDetails.navTo("details", context);        
+        },
+
+        onOpenMenu : function (evt) {
+            var oButton = evt.getSource();
+
+            var settingsMenu;
+			// create menu only once
+			if (!settingsMenu) {
+				settingsMenu = sap.ui.xmlfragment(
+					"sap.ui.sunshine.wt.fragment.SettingsMenu",
+					this
+				);
+				this.getView().addDependent(settingsMenu);
+			}
+
+			var eDock = sap.ui.core.Popup.Dock;
+			settingsMenu.open(false, oButton, eDock.BeginTop, eDock.BeginBottom, oButton);
         }
 	});
 }); 

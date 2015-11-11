@@ -32,6 +32,23 @@ sap.ui.define([
 				var routeToForecasts = sap.ui.core.UIComponent.getRouterFor(this);
 				routeToForecasts.navTo("forecasts");
 			}
+        },
+
+        onOpenMenu : function (evt) {
+            var oButton = evt.getSource();
+
+            var settingsMenu;
+            // create menu only once
+            if (!settingsMenu) {
+                settingsMenu = sap.ui.xmlfragment(
+                    "sap.ui.sunshine.wt.fragment.SettingsMenu",
+                    this
+                );
+                this.getView().addDependent(settingsMenu);
+            }
+
+            var eDock = sap.ui.core.Popup.Dock;
+            settingsMenu.open(false, oButton, eDock.BeginTop, eDock.BeginBottom, oButton);
         }
    });
 });

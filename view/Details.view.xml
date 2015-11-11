@@ -15,13 +15,7 @@
                     class="detailsBackButton"/>
                 <Image src="images/ic_logo.png" class="detailsHeader" />
             </HBox>
-            <core:Icon
-                src="sap-icon://menu2"
-                class="size1 menuButton">
-                <core:layoutData>
-                    <FlexItemData growFactor="1" />
-                </core:layoutData>
-            </core:Icon>
+            <Button icon="sap-icon://menu2" class="size1 menuButton" press="onOpenMenu"/>
         </Toolbar>
         <VBox class="detailsContent" 
             height="100%">

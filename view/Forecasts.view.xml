@@ -9,13 +9,7 @@
             <HBox class="toolbarLeft">
                 <Image src="images/ic_logo.png" class="forecastHeader" />
             </HBox>
-            <core:Icon
-                src="sap-icon://menu2"
-                class="size1 menuButton">
-                <core:layoutData>
-                    <FlexItemData growFactor="1" />
-                </core:layoutData>
-            </core:Icon>
+            <Button styled="false" icon="sap-icon://menu2" id="openMenu" class="size1 menuButton" press="onOpenMenu"/>
         </Toolbar>
         <List
             items="{
