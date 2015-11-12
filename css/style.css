@@ -4,11 +4,18 @@
 
 .openUISunshine .menuButton {
     width: 20%;
-    color: #ffffff 
+    color: #ffffff;
+    background-color: #1ca8f4;
+}
+
+.openUISunshine .menuButton:active {
+    color: #ffffff;
+    background-color: #1ca8f4;
 }
 
 .openUISunshine .toolbarLeft {
     width: 80%;
+    padding-left: 0.2em;
 }
 
 /*Styling for first forecast*/
@@ -164,180 +171,239 @@
 .sapUiUfdShellBackground, .sapMGlobalBackgroundColor {  
     background-color: transparent !important;  
     background-image: none !important;  
+    color: transparent !important;
 }  
         
 .sapMShellGlobalInnerBackground {  
     background-color: transparent !important;  
-    background-image: none !important;  
-}  
+    background-image: none !important;
+    color: transparent !important;  
+}
+
+.sapMBtnIcon {
+    color: transparent !important; 
+}
+
+.sapMBtnInner { 
+    background-color: transparent !important;  
+    background-image: none !important;
+    color: transparent !important;  
+    border: none;
+}
+.sapMBtnInner.sapMBtnHoverable:hover { 
+    background-color: transparent !important;  
+    background-image: none !important;
+    color: transparent !important;  
+    border: none;
+}
 
 .sapThemeBrand-asOutlineColor {
     background-color: transparent !important;  
-    background-image: none !important;  
+    background-image: none !important;
+    color: transparent !important;  
 } 
 
 .sapThemeHighlight-asColor {
     background-color: transparent !important;  
-    background-image: none !important;  
+    background-image: none !important; 
+    color: transparent !important; 
 } 
 .sapThemeHighlight-asBorderColor {
     background-color: transparent !important;  
     background-image: none !important;  
+    color: transparent !important;
 } 
 .sapThemeHighlight-asBackgroundColor {
     background-color: transparent !important;  
     background-image: none !important;  
+    color: transparent !important;
 } 
 .sapThemeHighlight-asOutlineColor {
     background-color: transparent !important;  
     background-image: none !important;  
+    color: transparent !important;
 } 
 .sapThemePageBG {
     background-color: transparent !important;  
     background-image: none !important;  
+    color: transparent !important;
 } 
 .sapThemePageBG-asColor {
     background-color: transparent !important;  
     background-image: none !important;  
+    color: transparent !important;
 } 
 .sapThemeBarBG {
     background-color: transparent !important;  
     background-image: none !important;  
+    color: transparent !important;
 } 
 .sapThemeBarHeading {
     background-color: transparent !important;  
     background-image: none !important;  
+    color: transparent !important;
 } 
 .sapThemeBarText {
     background-color: transparent !important;  
     background-image: none !important;  
+    color: transparent !important;
 } 
 
 .sapThemeBaseBG-asBackgroundColor {
     background-color: transparent !important;  
     background-image: none !important;  
+    color: transparent !important;
 } 
 
 .sapThemeBaseBG {
     background-color: transparent !important;  
     background-image: none !important;  
+    color: transparent !important;
 } 
 
 .sapThemeBarBG {
     background-color: transparent !important;  
     background-image: none !important;  
+    color: transparent !important;
 }
  
 .sapThemeBaseBG-asBackgroundColor {
     background-color: transparent !important;  
     background-image: none !important;  
+    color: transparent !important;
 }
 
 .sapThemeText-asBackgroundColor {
     background-color: transparent !important;  
-    background-image: none !important;  
+    background-image: none !important;
+    color: transparent !important;  
 }
 
 .sapThemeHighlight-asOutlineColor {
     background-color: transparent !important;  
-    background-image: none !important;  
+    background-image: none !important;
+    color: transparent !important;  
 } 
 
 .sapThemeBaseBG {
     background-color: transparent !important;  
-    background-image: none !important;  
+    background-image: none !important;
+    color: transparent !important;  
 } 
 
 .sapThemeBaseBG-asBackgroundColor {
     background-color: transparent !important;  
     background-image: none !important;  
+    color: transparent !important;
 } 
 .sapThemeBaseBG-asBorderColor {
     background-color: transparent !important;  
-    background-image: none !important;  
+    background-image: none !important;
+    color: transparent !important;  
 } 
 .sapThemeBaseBG-asColor {
     background-color: transparent !important;  
-    background-image: none !important;  
+    background-image: none !important; 
+    color: transparent !important; 
 } 
 .sapThemeBrand-asColor {
     background-color: transparent !important;  
-    background-image: none !important;  
+    background-image: none !important;
+    color: transparent !important;  
 } 
 .sapThemeBrand-asBorderColor {
     background-color: transparent !important;  
-    background-image: none !important;  
+    background-image: none !important;
+    color: transparent !important;  
 } 
 .sapThemeBrand-asBackgroundColor {
     background-color: transparent !important;  
-    background-image: none !important;  
+    background-image: none !important;
+    color: transparent !important;  
 } 
 .sapThemeBrand-asOutlineColor {
     background-color: transparent !important;  
     background-image: none !important;  
+    color: transparent !important;
 }
 
 .sapThemeFontFamily {
     background-color: transparent !important;  
     background-image: none !important;  
+    color: transparent !important;
 } 
 .sapThemeFontSize {
     background-color: transparent !important;  
     background-image: none !important;  
+    color: transparent !important;
 } 
 .sapThemeFont {
     background-color: transparent !important;  
     background-image: none !important;  
+    color: transparent !important;
 } 
 .sapThemeText {
     background-color: transparent !important;  
     background-image: none !important;  
+    color: transparent !important;
 } 
 .sapThemeText-asColor {
     background-color: transparent !important;  
     background-image: none !important;  
+    color: transparent !important;
 } 
 .sapThemeText-asBackgroundColor {
     background-color: transparent !important;  
     background-image: none !important;  
+    color: transparent !important;
 } 
 .sapThemeText-asBorderColor {
     background-color: transparent !important;  
     background-image: none !important;  
+    color: transparent !important;
 } 
 .sapThemeText-asOutlineColor {
     background-color: transparent !important;  
     background-image: none !important;  
+    color: transparent !important;
 } 
 .sapThemeTextInverted {
     background-color: transparent !important;  
     background-image: none !important;  
+    color: transparent !important;
 } 
 .sapThemeTextInverted-asColor {
     background-color: transparent !important;  
     background-image: none !important;  
+    color: transparent !important;
 } 
 .sapThemeNegativeText {
     background-color: transparent !important;  
     background-image: none !important;  
+    color: transparent !important;
 } 
 .sapThemeCriticalText {
     background-color: transparent !important;  
     background-image: none !important;  
+    color: transparent !important;
 } 
 .sapThemePositiveText {
     background-color: transparent !important;  
     background-image: none !important;  
+    color: transparent !important;
 } 
 .sapThemeLightText {
     background-color: transparent !important;  
     background-image: none !important;  
+    color: transparent !important;
 } 
 .sapThemeMediumText {
     background-color: transparent !important;  
     background-image: none !important;  
+    color: transparent !important;
 } 
 .sapThemeDarkText {
     background-color: transparent !important;  
     background-image: none !important;  
+    color: transparent !important;
 } 
