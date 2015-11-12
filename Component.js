@@ -1,8 +1,9 @@
 sap.ui.define([
    "sap/ui/core/UIComponent",
    "sap/ui/model/json/JSONModel",
-   "sap/ui/model/resource/ResourceModel"
-], function (UIComponent, JSONModel, ResourceModel) {
+   "sap/ui/model/resource/ResourceModel",
+	"sap/ui/model/odata/v2/ODataModel"
+], function (UIComponent, JSONModel, ResourceModel, ODataModel) {
    "use strict";
    return UIComponent.extend("sap.ui.sunshine.wt.Component", {
        	metadata : {
@@ -16,7 +17,6 @@ sap.ui.define([
               
             // create a Model with this data
             var model = new sap.ui.model.json.JSONModel();
-            //model.setData(data);
             model.loadData("http://api.openweathermap.org/data/2.5/forecast/daily?id=524901&APPID=KEY-REMOVED&q=Regina&mode=json&units=metric&cnt=14", "", false);
 
             // set the model to the App; it will be propagated to the children
@@ -29,7 +29,7 @@ sap.ui.define([
              this.setModel(i18nModel, "i18n");
             
             // create the views based on the url/hash
-			this.getRouter().initialize();
+			      this.getRouter().initialize();
 
 	}
    });
