@@ -36,6 +36,22 @@ sap.ui.define([
 
 			var eDock = sap.ui.core.Popup.Dock;
 			settingsMenu.open(false, oButton, eDock.BeginTop, eDock.BeginBottom, oButton);
+        },
+
+        onMenuItemPress : function (evt) {
+
+        	if(evt.getParameter("item").getSubmenu()) {
+				return;
+			}
+		
+			var msg = "";
+			if(evt.getParameter("item").getMetadata().getName() == "sap.ui.unified.MenuTextFieldItem") {
+				msg = "'" + oEvent.getParameter("item").getValue() + "' entered";
+			}
+			else {
+				msg = "'" + oEvent.getParameter("item").getText() + "' pressed";
+			}
+		
         }
 	});
 }); 

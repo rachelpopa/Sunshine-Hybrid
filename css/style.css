@@ -8,6 +8,11 @@
     background-color: #1ca8f4;
 }
 
+.openUISunshine .menuButton:hover {
+    color: #ffffff;
+    background-color: #1ca8f4;
+}
+
 .openUISunshine .menuButton:active {
     color: #ffffff;
     background-color: #1ca8f4;
@@ -184,6 +189,10 @@
     color: transparent !important; 
 }
 
+.sapMBtnIcon:active {
+    color: transparent !important; 
+}
+
 .sapMBtnInner { 
     background-color: transparent !important;  
     background-image: none !important;
@@ -191,6 +200,13 @@
     border: none;
 }
 .sapMBtnInner.sapMBtnHoverable:hover { 
+    background-color: transparent !important;  
+    background-image: none !important;
+    color: transparent !important;  
+    border: none;
+}
+
+.sapMBtnInner.sapMBtnHoverable:active { 
     background-color: transparent !important;  
     background-image: none !important;
     color: transparent !important;  

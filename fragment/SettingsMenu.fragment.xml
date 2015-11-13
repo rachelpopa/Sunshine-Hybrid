@@ -4,7 +4,7 @@
 	xmlns:u="sap.ui.unified"
 	id="settingsMenu">
 		<u:Menu  
-			itemSelect="handleMenuItemPress">
+			itemSelect="onMenuItemPress">
 			<u:MenuTextFieldItem 
 				label="Location" 
 				enabled="true" 
