@@ -15,12 +15,12 @@ sap.ui.define([
             // call the init function of the parent
             UIComponent.prototype.init.apply(this, arguments);
               
-            // create a Model with this data
-            var model = new sap.ui.model.json.JSONModel();
-            model.loadData("http://api.openweathermap.org/data/2.5/forecast/daily?id=524901&APPID=KEY-REMOVED&q=Regina&mode=json&units=metric&cnt=14", "", false);
+            var oConfig = this.getMetadata().getConfig();
+            var oWeatherDBModel = new JSONModel(oConfig.openWeatherDB);
+
 
             // set the model to the App; it will be propagated to the children
-            this.setModel(model);
+            this.setModel(oWeatherDBModel);
             
             // set i18n model
              var i18nModel = new ResourceModel({
