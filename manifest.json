@@ -34,7 +34,10 @@
 	  }
 	},
 	"config": {
-	  "openWeatherDB": "http://api.openweathermap.org/data/2.5/forecast/daily?id=524901&APPID=KEY-REMOVED&q=Regina&mode=json&units=metric&cnt=14"
+	  "openWeatherDB": "http://api.openweathermap.org/data/2.5/forecast/daily?id=524901&APPID=",
+	  "apiKey": "KEY-REMOVED",
+	  "httpParameters": "&mode=json&units=metric&cnt=14&q=",
+	  "location": "Regina"
 	},
 	"models": {
 	  "i18n": {

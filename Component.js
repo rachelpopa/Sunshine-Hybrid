@@ -16,8 +16,7 @@ sap.ui.define([
             UIComponent.prototype.init.apply(this, arguments);
               
             var oConfig = this.getMetadata().getConfig();
-            var oWeatherDBModel = new JSONModel(oConfig.openWeatherDB);
-
+            var oWeatherDBModel = new JSONModel(oConfig.openWeatherDB + oConfig.apiKey + oConfig.httpParameters + oConfig.location);
 
             // set the model to the App; it will be propagated to the children
             this.setModel(oWeatherDBModel);
